@@ -1,20 +1,26 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using GreatQuotes.Data;
 
-namespace GreatQuotes.ViewModels {
-    public class MainViewModel : BaseViewModel {
-        readonly Action saveQuotes;
+namespace GreatQuotes.ViewModels
+{
+    public class MainViewModel : BaseViewModel
+    {
 
-        public MainViewModel(Action save) {
-            saveQuotes = save;
+        private readonly QuoteManager quoteManager;
+
+        public MainViewModel()
+        {
+            quoteManager = QuoteManager.Instance;
+            Quotes = quoteManager.Quotes as ObservableCollection<GreatQuoteViewModel>;
         }
 
         public ObservableCollection<GreatQuoteViewModel> Quotes { get; set; }
 
         public GreatQuoteViewModel ItemSelected { get; set; }
 
-        public void SaveQuotes() {
-            saveQuotes?.Invoke();
+        public void SaveQuotes()
+        {
+            quoteManager.Save();
         }
     }
 }

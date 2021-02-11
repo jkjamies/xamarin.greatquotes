@@ -69,7 +69,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuoteLoader.cs" />
+    <Compile Include="Data\QuoteLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -143,5 +143,8 @@
     <BundleResource Include="Resources\ic_edit.png" />
     <BundleResource Include="Resources\ic_edit%402x.png" />
     <BundleResource Include="Resources\ic_edit%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
 </Project>
